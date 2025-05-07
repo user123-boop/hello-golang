@@ -3,7 +3,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-latest
-    container: golang:1.23.0
+    container: golang:1.24.3
     steps:
       - uses: actions/checkout@v4
 
@@ -36,7 +36,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5.5.1
         with:
-          images: <Docker ID>/hello-golang
+          images: abrakham/hello-golang 
 
       - name: Build and push Docker Image
         uses: docker/build-push-action@v5
